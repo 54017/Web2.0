@@ -1,0 +1,48 @@
+#wrapper {
+	margin: 100px auto;
+	width: 80%;
+}
+
+.aorb {
+	position: relative;
+}
+
+#cards {
+	width: 75%;
+	margin: auto;
+}
+
+
+h2 {
+}
+
+.ui.stacked.segment {
+	width: 60%;
+	margin: auto;
+}
+
+.left.attached.fixed.button {
+	padding: 15px 8px 15px 15px;
+	position: fixed;
+}
+
+.success.message {
+	display: none;
+	width: 61%;
+	margin: 10px auto;
+}
+
+.ui.divided.items {
+	width: 60%;
+	margin: 80px auto;
+}
+
+.wrapper {
+	width: 60%;
+	margin: auto;
+}
+
+div.description {
+	word-wrap: break-word;
+	break-word: break-all;
+}

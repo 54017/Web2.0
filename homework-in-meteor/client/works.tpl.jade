@@ -1,0 +1,57 @@
+.ui.left.vertical.inverted.labeled.icon.sidebar.menu
+	a#home.item
+		i.home.icon
+		| Home
+	if isTeacher
+		a#works.item
+			i.suitcase.icon
+			| Works
+	a#settings.item
+		i.settings.icon
+		| Settings
+	a#signout.item
+		i.sign.out.icon
+		| Sign out
+.pusher
+	h2.ui.header.center.aligned.icon
+		i.gift.icon
+		.content faster than the wind
+			.sub.header passionate as sin
+	div
+		#sidebarBt.ui.black.big.launch.left.attached.fixed.button
+			i.content.icon
+		.wrapper
+			.ui.labeled.icon.button.blue.backBt
+					i.left.chevron.icon
+					|Back
+		.ui.divided.items
+			if isTeacher
+				each getTasks
+					.item
+						.content
+							a.header(contenteditable) #{title}
+							.meta
+								span.cinema deadline: 
+								span(contenteditable) #{deadline}
+							.description(contenteditable)
+								p #{description}
+							.extra
+								.modifyBt.ui.green.basic.button(id="#{_id}") Modify
+								.deleteBt.ui.orange.basic.button(id="#{_id}") Delete
+								.ui.right.floated.primary.button.viewSub(name="#{_id}")
+									|View Submissions
+									i.right.chevron.icon
+			else
+				each getTasks
+					.item
+						.content
+							a.header #{title}
+							.meta
+								span.cinema deadline: 
+								span #{deadline}
+							.description
+								p #{description}
+							.extra
+								.ui.right.floated.primary.button.viewSub(name="#{_id}")
+									|View Submissions
+									i.right.chevron.icon

@@ -1,0 +1,18 @@
+head
+	title hw8
+	script(src='/jquery.js')					
+	script(src='/semantic.min.js')
+	script(src='/jquery.datetimepicker.js')
+	link(rel='stylesheet', href='/semantic.min.css')
+	link(rel='stylesheet', href='/jquery.datetimepicker.css')
+	link(rel='stylesheet', href='/main.css')
+
+
+body
+	if currentUser
+		+student
+		+teacher
+	else
+		+account		
+
+

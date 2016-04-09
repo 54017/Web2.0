@@ -1,0 +1,36 @@
+.ui.left.vertical.inverted.labeled.icon.sidebar.menu
+	a#home.item
+		i.home.icon
+		| Home
+	a#works.item
+		i.suitcase.icon
+		| Works
+	a#settings.item
+		i.settings.icon
+		| Settings
+	a#signout.item
+		i.sign.out.icon
+		| Sign out
+.pusher
+	h2.ui.header.center.aligned.icon
+		i.leaf.icon
+		.content Life is a chain of moments of enjoyment.
+			.sub.header something worth waiting.
+	div
+		#sidebarBt.ui.black.big.launch.left.attached.fixed.button
+			i.content.icon
+		.ui.stacked.segment
+			h3.ui.dividing.header Post Task
+			form.ui.form
+				.two.fields
+					.field 
+						input(type='text', placeholder='Title....', name='title')
+					.field
+						input#datetimepicker(type='text' placeholder='Deadline....', name='deadline')
+				.field
+					textarea(name='description')
+				#submitBt.ui.blue.basic.button Submit
+	.ui.success.message
+		i.close.icon
+		.header The new Task is posted successfully
+		p Go to Works item to see what you have posted

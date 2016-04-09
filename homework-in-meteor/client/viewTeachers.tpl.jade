@@ -1,0 +1,50 @@
+.ui.left.vertical.inverted.labeled.icon.sidebar.menu
+	a#home.item
+		i.home.icon
+		| Home
+	a#settings.item
+		i.settings.icon
+		| Settings
+	a#signout.item
+		i.sign.out.icon
+		| Sign out
+.pusher
+	h2.ui.header.center.aligned.icon
+		i.leaf.icon
+		.content Life is a chain of moments of enjoyment.
+			.sub.header something worth waiting.
+	div
+		#sidebarBt.ui.black.big.launch.left.attached.fixed.button
+			i.content.icon
+		#cards.ui.piled.segment
+			.ui.header.dividing Teachers followed
+			.ui.special.cards
+				each teachers
+					.card
+						.dimmable.image
+							.ui.dimmer
+								.content
+									.center
+										if (isFollowed this)
+											.ui.inverted.button.viewTasks(name="#{_id}") View Tasks
+											br
+											br
+											.ui.inverted.button.unfollow(name="#{_id}") Unfollow
+										else
+											.ui.inverted.button.follow(name="#{_id}") Follow
+							if (imageFound this)
+								img(src="{{getImage profile.image}}")
+							else
+								img(src="/images/admin.jpg")
+						.content
+							a.header #{profile.firstname}#{profile.lastname}
+							.description
+								p #{profile.introduction}
+						.extra.content
+							a
+								if (isFollowed this)
+									i.heart.icon.red
+									|{{getEmail this}}
+								else
+									i.heart.icon
+									|{{getEmail this}}	

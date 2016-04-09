@@ -1,0 +1,57 @@
+body {
+	font-family: arial;
+	font-weight: bold;
+}
+
+table {
+	font-size: 16px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+
+table th {
+	border-width: 1px;
+	padding: 4px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #27408B;
+	color: white;
+	text-align: left;
+}
+table td {
+	border-width: 1px;
+	padding: 4px;
+	font-family:"Times New Roman",Georgia,Serif;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+#todo {
+	width: 500px;
+}
+
+#staff {
+	width: 450px;
+}
+
+.alternate td {
+	background-color: #E8E8E8;
+}
+
+.ascend {
+	background-color: #CCCCFF;
+	background-image: url("ascend.png");
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+.descend {
+	background-color: #CCCCFF;
+	background-image: url("descend.png");
+	background-repeat: no-repeat;
+	background-position: center right;
+}

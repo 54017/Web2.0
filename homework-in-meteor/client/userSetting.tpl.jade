@@ -1,0 +1,67 @@
+.ui.left.vertical.inverted.labeled.icon.sidebar.menu
+	a#home.item
+		i.home.icon
+		| Home
+	if isTeacher
+		a#works.item
+			i.suitcase.icon
+			| Works
+	a#settings.item
+		i.settings.icon
+		| Settings
+	a#signout.item
+		i.sign.out.icon
+		| Sign out
+.pusher
+	h2.ui.header.center.aligned.icon
+		i.user.icon
+		.content User Settings
+	div
+		#sidebarBt.ui.black.big.launch.left.attached.fixed.button
+			i.content.icon
+		div.wrapper
+			h3.ui.top.attached.header User Settings
+			.ui.attached.segment
+				form.ui.form
+					h4.ui.dividing.header Public Profile
+					.two.fields
+						.field
+							label Name
+							.two.fields
+								.field
+									input(type='text', name='firstName', placeholder="First Name", value="#{currentUser.profile.firstname}")
+								.field
+									input(type='text', name='lastName', placeholder='Last Name', value="#{currentUser.profile.lastname}")
+						.field
+							label Profile picture
+							.two.fields
+								.field
+									if imageFound
+										img.ui.tiny.image(src="{{getImage image.profile.image}}")
+									else
+										img.ui.tiny.image(src="/images/admin.jpg")
+								.field
+									label.ui.icon.button(for='file')
+										i.file.icon
+										|Open File
+									input(type='file', id='file', style='display:none')
+					.two.fields
+						.field
+							label Email
+							.ui.right.labeled.input
+								input(type='text', placeholder='Email...', name='email')
+								.ui.dropdown.label(tabindex="0")
+									.text @qq.com
+									i.dropdown.icon
+									.menu
+										.item(name='@qq.com') @qq.com
+										.item(name='@qq.com') @163.com
+										.item(name='@sina.com') @sina.com
+										.item(name='@126.com') @126.com
+						.field
+					.field
+						label Introduction
+						textarea(name='introduction') #{currentUser.profile.introduction}
+					#updateBt.ui.blue.basic.button Update 
+
+

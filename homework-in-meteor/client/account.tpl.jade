@@ -1,0 +1,93 @@
+if isSign
+	unless currentUser
+		h2.ui.center.aligned.icon.header
+			i.circular.users.icon
+			|Welcome
+		div#wrapper.ui.two.column.middle.aligned.relaxed.fitted.stackable.grid.segment
+			div.column
+				form#signupForm.ui.form(action="action")
+					.two.fields
+						#usernameDiv.field.ui.icon.input
+							input(type='text' name='username', placeholder='Username...')
+							i.user.icon
+						#passwordDiv.field.ui.icon.input
+							input(type='password' name='password', placeholder='Password...')
+							i.lock.icon
+					.two.fields
+						.field.ui.icon.input
+							input(type='text' name='firstname', placeholder='Firstname...')
+							i.write.icon
+						.field.ui.icon.input
+							input(type='text' name='lastname', placeholder='Lastname...')
+							i.write.icon
+					.ui.right.labeled.input
+						input(type='text', placeholder='Email...', name='email')
+						.ui.dropdown.label(tabindex="0")
+							.text @qq.com
+							i.dropdown.icon
+							.menu
+								.item @qq.com
+								.item @163.com
+								.item @sina.com
+								.item @126.com
+					br
+					br
+					.ui.buttons
+						.ui.button.positive.student Student
+						.or
+						.ui.button.teacher Teacher
+					.ui.buttons
+						.ui.button.positive.male Male
+						.or
+						.ui.button.female Female
+					br
+					br
+					input.ui.button.blue(type='submit', value='Submit')
+			.ui.vertical.divider Or
+			.center.aligned.column
+				#ifLog.green.ui.labeled.icon.button.huge
+					i.sign.in.icon
+					|Sign In.
+				br
+				br
+				.ui.facebook.button.huge
+					i.facebook.icon
+					|Facebook
+				br
+				br
+				.ui.instagram.button.huge
+					i.instagram.icon
+					|Instagram
+if isLog
+	unless currentUser
+		h2.ui.center.aligned.icon.header
+			i.circular.users.icon
+			|Welcome Back
+		div#wrapper.ui.two.column.middle.aligned.relaxed.fitted.stackable.grid.segment
+			div.column
+				form#loginForm.ui.form(action="action")
+					.two.fields
+						#usernameDiv.field.ui.icon.input
+							input(type='text' name='username', placeholder='Username...')
+							i.user.icon
+						#passwordDiv.field.ui.icon.input
+							input(type='password' name='password', placeholder='Password...')
+							i.lock.icon
+					br
+					br
+					input.ui.button.blue(type='submit', value='Submit')
+			.ui.vertical.divider Or
+			.center.aligned.column
+				#ifLog.green.ui.labeled.icon.button.huge
+					i.signup.icon
+					|Sign Up
+				br
+				br
+				.ui.facebook.button.huge
+					i.facebook.icon
+					|Facebook
+				br
+				br
+				.ui.instagram.button.huge
+					i.instagram.icon
+					|Instagram

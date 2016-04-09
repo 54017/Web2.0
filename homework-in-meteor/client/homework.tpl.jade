@@ -1,0 +1,80 @@
+.ui.left.vertical.inverted.labeled.icon.sidebar.menu
+	a#home.item
+		i.home.icon
+		| Home
+	if isTeacher
+		a#works.item
+			i.suitcase.icon
+			| Works
+	a#settings.item
+		i.settings.icon
+		| Settings
+	a#signout.item
+		i.sign.out.icon
+		| Sign out
+.pusher
+	h2.ui.header.center.aligned.icon
+		i.gift.icon
+		.content faster than the wind
+			.sub.header passionate as sin
+	div
+		#sidebarBt.ui.black.big.launch.left.attached.fixed.button
+			i.content.icon
+		input(id='task', style='display: none')
+		div.wrapper
+			.ui.labeled.icon.button.blue.backBt
+				i.left.chevron.icon
+				|Back
+			if isStudent
+				if timeOut
+					.ui.warning.message
+						i.close.icon
+						.header I am sorry to tell you it's not allowed to upload anymore
+						|You have missed deadline. pity.
+				else
+					br
+					br
+					label.ui.icon.button(for='file')
+						i.file.icon
+						|Open File
+						input(type='file', id='file', style='display:none')
+			else
+				if timeOut
+					.ui.info.message
+							i.close.icon
+							.header You can download submissions and give grades in the grade column
+							|No need to submit. Wish you have a nice day!
+				else
+					.ui.warning.message
+							i.close.icon
+							.header I am sorry to tell you it's not allowed to give grade yet
+							|Waite until deadline
+			br
+			br
+			div
+				table.ui.sortable.celled.table
+					thead
+						tr
+							th Submission
+							th Grade
+							th Operation
+					tbody
+						each submissions
+							tr
+								td
+									|#{title}
+								if isTeacher
+									if timeOut
+										td.grade(contenteditable, name="#{_id}")
+											|#{grade}
+									else
+										td
+											|#{grade}
+								else
+									td
+										|#{grade}
+								td
+									if (download this)
+										a.ui.button.blue(href="{{getUrl this}}") Download
+									else	
+										a.ui.button.disabled Download

@@ -1,0 +1,5 @@
+我的代码适用的网站:
+http://mindmup.github.io/editable-table/
+http://www.theguardian.com/football/tables
+http://www.cplusplus.com/reference/ciso646/
+http://www.w3cschool.cc/html/html-tables.html
